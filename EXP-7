@@ -1,0 +1,22 @@
+import cv2
+cap = cv2.VideoCapture(r"C:\Users\tgjai\Videos\Video 1.mp4")  
+if not cap.isOpened():
+    print("Error: Cannot open video file")
+    exit()
+
+print("Press 'q' to exit")
+while True:
+    ret, frame = cap.read()
+
+    if not ret:
+        print("End of video")
+        break
+    cv2.imshow("Video Playback", frame)
+
+    key = cv2.waitKey(100)  
+
+    if key & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
