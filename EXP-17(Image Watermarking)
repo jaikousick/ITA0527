@@ -1,0 +1,18 @@
+import cv2
+
+original = cv2.imread("original.jpg")
+watermark = cv2.imread("watermark.png")
+
+if original is None or watermark is None:
+    print("Image not found!")
+    exit()
+
+watermark = cv2.resize(watermark, (original.shape[1], original.shape[0]))
+
+watermarked_image = cv2.addWeighted(original, 0.8, watermark, 0.2, 0)
+
+cv2.imshow("Original Image", original)
+cv2.imshow("Watermarked Image", watermarked_image)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
