@@ -1,0 +1,16 @@
+import cv2
+
+image = cv2.imread("sample.jpg")
+
+if image is None:
+    print("Image not found!")
+    exit()
+
+roi = image[100:200, 150:300]
+
+image[250:350, 300:450] = roi
+
+cv2.imshow("Modified Image", image)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
