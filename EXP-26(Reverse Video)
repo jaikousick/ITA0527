@@ -1,6 +1,6 @@
 import cv2
 
-cap = cv2.VideoCapture("video.mp4")
+cap = cv2.VideoCapture(r"C:\Users\tgjai\Videos\Video 1.mp4")
 
 frames = []
 
